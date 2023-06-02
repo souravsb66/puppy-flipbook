@@ -1,0 +1,190 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #ced4da;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+input {
+    display: none;
+}
+.book {
+    width: 350px;
+    height: 450px;
+    position: relative;
+    transition-duration: 1s;
+    perspective: 1500;
+}
+.cover, .back-cover {
+    background-color: #6c757d;
+    width: 100%;
+    height: 100%;
+    border-radius: 0 15px 15px 0;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.cover {
+    position: absolute;
+    z-index: 50;
+    transform-origin: center left;
+    transition: transform 1s;
+}
+.cover label {
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+.cover h1 {
+    position: absolute;
+    text-align: center;
+}
+.back-cover {
+    position: relative;
+    z-index: -1;
+}
+
+
+.page {
+    position: absolute;
+    background-color: white;
+    width: 330px;
+    height: 430px;
+    margin-top: 10px;
+    border-radius: 0 15px 15px 0;
+    transform-origin: left;
+    transform-style: preserve-3d;
+    transform: rotateY(0deg);
+    transition-duration: 1.5s;
+    border: 1px solid rgb(190, 187, 187);
+
+}
+.page img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px 0 0 15px;
+}
+.front-page {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+.front-page > h5 {
+    margin-top: 10px;
+}
+.front-page > p {
+    font-size: 15px;
+}
+.back-page {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    z-index: 99;
+    transform: rotateY(180deg);
+}
+.next, .prev {
+    position: absolute;
+    border: 1em;
+    cursor: pointer;
+}
+.next {
+    right: 1em;
+    bottom: 1em;
+}
+.prev {
+    left: 1em;
+    bottom: 1em;
+    color: white;
+}
+#page1 {
+    z-index: 9;
+}
+#page1 p {
+    font-size: 20px;
+    margin-top: 15px;
+}
+#page2 {
+    z-index: 8;
+}
+#page3 {
+    z-index: 7;
+}
+#thanks {
+    font-size: 30px;
+    text-align: center;
+    margin-top: 150px;
+}
+#page4 {
+    z-index: 6;
+}
+#page5 {
+    z-index: 5;
+}
+#page6 {
+    z-index: 4;
+}
+#page6 .prev {
+    color: black;
+}
+#page10 {
+    z-index: 1;
+}
+#page10 h1 {
+    text-align: center;
+    font-size: 50px;
+    margin-top: 150px;
+}
+
+#checkbox-cover:checked ~ .book {
+    transform: translateX(200px)
+}
+#checkbox-cover:checked ~ .book .cover {
+    transform: rotateY(-180deg);
+    z-index: 1;
+    transition: transform 1.5s, z-index 0.5s 0.5s;
+}
+#checkbox-page1:checked ~ .book #page1 {
+    transform: rotateY(-180deg);
+    transition: transform 1.5s, z-index 0.5s 0.5s;
+    z-index: 2;
+}
+#checkbox-page2:checked ~ .book #page2 {
+    transform: rotateY(-180deg);
+    transition: transform 1.5s, z-index 0.5s 0.5s;
+    z-index: 3;
+}
+#checkbox-page3:checked ~ .book #page3 {
+    transform: rotateY(-180deg);
+    transition: transform 1.5s, z-index 0.5s 0.5s;
+    z-index: 4;
+}
+#checkbox-page4:checked ~ .book #page4 {
+    transform: rotateY(-180deg);
+    transition: transform 1.5s, z-index 0.5s 0.5s;
+    z-index: 5;
+}
+#checkbox-page5:checked ~ .book #page5 {
+    transform: rotateY(-180deg);
+    transition: transform 1.5s, z-index 0.5s 0.5s;
+    z-index: 6;
+}
+#checkbox-page6:checked ~ .book #page6 {
+    transform: rotateY(-180deg);
+    transition: transform 1.5s, z-index 0.5s 0.5s;
+    z-index: 7;
+}
