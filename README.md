@@ -1,4 +1,4 @@
 # puppy-flipbook
 A puppy flipbook
 
-Deployed [URL](https://puppy-flipbook.vercel.app/)
+Deployed Link : https://puppy-flipbook.vercel.app)
